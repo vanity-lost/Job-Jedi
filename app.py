@@ -13,7 +13,7 @@ from langchain.callbacks import get_openai_callback
 #import docx2txt
 
 
-os.environ['OPENAI_API_KEY'] = "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"
+os.environ['OPENAI_API_KEY'] = "your-openai-api-key"
 
 def generate_resume(background_path, job_description, output_path='./results/resume.tex'):
     print("generating")

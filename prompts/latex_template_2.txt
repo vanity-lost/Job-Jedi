@@ -1,0 +1,10 @@
+
+With the background information {background}, now you are given the latex template {template}.
+Using the background information, modify as little as possible, keeping the latex structure unchanged, only modifying the text part, and generate a one-page latex pdf. 
+The projects section of the latex template refers to the projects experience, programming skills, and ending. The generated resume should ONLY include the projects, programming skills, and ending. Pay attention to deliberately exclude any unnecessary pieces of information in the generated resume: DO NOT include any heading, education and/or working experience.
+Remember that in latex, we put the backslash '\' before the special characters, such as '#' (e.g. C# should write as C\#).
+Use only utf-8 characters.
+Remeber that you are writing the second half part of the resume, so:
+You must include the \end document code to make sure the latex code is end.
+You must not include the \documentclass and \begin docment in the result. 
+The generated resume should include the projects, programming skills, and ending based on the background information, using the latex template structure unchanged and modifying as

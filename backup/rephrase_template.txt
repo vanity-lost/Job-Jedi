@@ -1,0 +1,7 @@
+With the background information \n {background} \n, now you are given the detailed job description \n {job} \n.
+Based on the background information and job description, generate a strong resume.
+Using the job description, select ONLY the top three related strong experience/projects as the background information, rephrase/summarize background to be much stronger and more match to the job. Keep at least three expriences and also project remained.
+DO NOT introduce non-existing information. Pay attention to deliberately exclude any unnecessary pieces of information in the generated resume. The generated resume should have length around 500 tokens, i.e. keep the resume concise on language and detailed in experience.
+(for revision purposes, for content change request, you always need to revise this; for other purposes, please ignore)
+
+generated resume:

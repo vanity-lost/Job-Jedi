@@ -1,0 +1,157 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[pdftex]{hyperref}
+\usepackage{fancyhdr}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.375in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+    \textbf{\href{https://www.linkedin.com/in/randolph-zhao/}{\Large Yulin (Randolph) Zhao}} & Email : \href{mailto:randolph.zhao.49@gmail.com}{randolph.zhao.49@gmail.com}\\
+    \href{https://github.com/vanity-lost}{GitHub: vanity-lost} & Mobile : +1(216)298-3872 \\
+  \end{tabular*}
+
+\section{Education}
+    \resumeSubHeadingListStart
+      \resumeSubheading
+        {Case Western Reserve University, Cleveland, OH}{}
+        {Bachelor of Science in Computer Science; GPA: 3.933/4.0}{Aug. 2018 - Present}
+        \resumeItemListStart
+          \resumeItem{Relevant Coursework}
+            {Statistics, Algorithms, Database System, Data Mining, Machine Learning}
+        \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+\section{Experience}
+    \resumeSubHeadingListStart
+    
+      \resumeSubheading
+        {Forkaia, Irvine, CA}{}
+        {Data Science Intern}{Jan 2022 - Mar 2022}
+        \resumeItemListStart
+          \resumeItem{Data Pipelines Development}
+            {Developed pipelines to analyze the properties distribution of Forkaia members by extracting keywords of Forkaia members' resumes (.pdf) and interview records (.txt) using NLP techniques and visualizing using Python Pyecharts.}
+          \resumeItem{Data Visualization}
+            {Developed pipelines to visualize the HR request and distribution by extracting company status evaluation and HR requirements of 188 startups from Excel files and visualizing using Python seaborn.}
+          \resumeItem{NFL Play Prediction Model}
+            {Developed 4 NFL play prediction models using TensorFlow LSTM and Random Forest model, resulting in acceptable errors of predictions in yards, yard line, time, and play type.}
+        \resumeItemListEnd
+    
+      \resumeSubheading
+        {Definer Inc., Minneapolis, MN}{}
+        {Data Scientist Intern}{May 2021 - Dec 2021}
+        \resumeItemListStart
+          \resumeItem{ETL Pipelines Development}
+            {Developed 4 ETL pipelines that collect real-time streaming data using web scraping techniques, extract and transform data on AWS EC2 server, and store to AWS S3 buckets.}
+          \resumeItem{R Shiny Dashboard Development}
+            {Developed an R Shiny dashboard to provide real-time visualization of ERC20 and OKExChain transactions.}
+          \resumeItem{Database System Development}
+            {Modeled the user information to design a relational database for the referral system, and deployed the system with RESTful APIs using PostgreSQL, AWS EC2, and the Python Flask framework.}
+          \resumeItem{API Documentation}
+            {Maintained the company’s API documentation on GitBook with explanations and examples, and helped different teams to use APIs.}
+        \resumeItemListEnd
+        
+      \resumeSubheading
+        {Click Co., Cleveland, OH}{}
+        {Backend Engineer}{Nov 2020 - Mar 2021}
+        \resumeItemListStart
+          \resumeItem{Features Development}
+            {Developed 10+ features of Moment using the Python Django framework.}
+          \resumeItem{Elastic Search Service}
+            {Deployed the elastic search service on the AWS EC2 server to enable fast real-time search.}
+        \resumeItemListEnd
+        
+    \resumeSubHeadingListEnd
+little as possible. 
+
+\section{Projects}
+  \resumeSubHeadingListStart
+    \resumeSubItem{Data Processing Framework for MIMIC-IV}
+      {Leading a two-person team to reproduce the paper “An Extensive Data Processing Pipeline for MIMIC-IV,” which provides a customizable ETL pipeline on MIMIC datasets (containing over 257k patients and 524k admission records). Organizing the codes in well-structured class architecture and contributing to the Python PyHealth library.}
+    \resumeSubItem{Spark Movie Recommendation System}
+      {Developed data pipelines to read and extract MovieLens reviews 100k data from AWS S3 using Python. Built a recommendation system using Spark ALS to provide suggestions for users and deployed it on AWS EC2.}
+    \resumeSubItem{Healthcare Tableau Dashboard}
+      {Developed an interactive Tableau dashboard to visualize the healthcare trends and identify potential problems with the current healthcare system.}
+    \resumeSubItem{Data Scientist | Cryptocurrency Prices Forecasting}
+      {Analyzed the performance of HMM and LSTM on forecasting the prices of Bitcoin in Python TensorFlow. Researched high correlations among cryptocurrencies, the U.S. stock market, and COVID-19 U.S. cases and successfully reduced the 39\% mean square error of the LSTM model.}
+    \resumeSubItem{Machine Learning Engineer | Meeting Assistant Software}
+      {Developed a desktop meeting assistant software using Python Django framework and AWS EC2 server, which aims to provide services such as attendance monitoring, automatic meeting transcripts, and automatic mind map generation. Designed and validated a naïve Text2Mindmap algorithm based on text summarization algorithm TextRank, the keyphrase extraction algorithm YAKE, and pre-trained text embedding model RoBERTa.}
+    \resumeSubItem{Project Manager \& UI Lead | Unity 3D Honor/Survival Game Project}
+      {Led UI team to develop Unity 3D user interfaces using C\#, including in-game UI and start/end/setting scenes. Managed the game project on GitHub for a team with 17 students from two different universities. Monitored the project progress and provided suggestions and help if teammates need, delivering the high-quality game with two extra functionalities.}
+  \resumeSubHeadingListEnd
+  
+\section{Programming Skills}
+ \resumeSubHeadingListStart
+  \resumeSubItem{Languages}
+    {Scala, Python, Javascript, C++, SQL, Java, Javascript, C++, SQL, Java.}
+  \resumeSubItem{Technologies}
+    {AWS, Play, React, Kafka, GCE, React, Kafka, GCE.}
+ \resumeSubHeadingListEnd
+
+\section{Ending}
+Member of the American Institute of Certified Public Accountants and Member of the Institute of Internal Auditors. Eligible to sit for the CPA Exam (150 credits required).
+
+\end{document}
+
+ \end{document}

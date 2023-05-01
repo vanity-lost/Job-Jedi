@@ -1,4 +1,3 @@
-import requests
 import streamlit as st
 from PIL import Image
 import base64
@@ -158,19 +157,12 @@ def chat(user_query):
 st.set_page_config(page_title="My Webpage", page_icon=":tada:", layout="wide")
 
 
-def load_lottieurl(url):
-    r = requests.get(url)
-    if r.status_code != 200:
-        return None
-    return r.json()
-
-
-# Use local CSS
+# load CSS file for styling
 def local_css(file_name):
     with open(file_name) as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-
+# read and display the generated Resume or the place holder at the start
 def read_initial_pdf_file(file):
     """
     Read the contents of a PDF file and return a base64-encoded string.
@@ -180,7 +172,7 @@ def read_initial_pdf_file(file):
         encoded = base64.b64encode(pdf_bytes).decode("utf-8")
         return encoded
     
-
+# Deprecated, originally used to read user uploaded pdf files
 def read_pdf_file(file):
     """
     Read the contents of a PDF file and return a base64-encoded string.
@@ -200,6 +192,7 @@ with st.container():
     st.title("Welcome, I'm Job Jedi")
     st.subheader("Let me help you with your Resume.")
 
+#---Background expirience and Job descirption input--#
 with st.container():
     st.write("---")
 
@@ -224,6 +217,8 @@ with st.container():
     st.write("##")
     if 'firstTime' not in st.session_state:
         st.session_state['firstTime'] = 'True'
+
+#---Display generated PDF on the left, Customization input and Generate button on the right---#
 with st.container():
     left_column, right_column = st.columns((3, 1))
     with left_column:
@@ -246,12 +241,14 @@ with st.container():
                 if newRequirement == "":
                     newRequirement = "regenerate"
             print("requirement=" + newRequirement)
+
+            #Calling model to decide weather or not to generate, and generate prompt if yes
             isGenerate = chat(newRequirement)
-            #isGenerate = True
             if isGenerate:
+                #generating Resume with background doc, job descrition, and customized prompt
                 generate_resume(os.path.join("./",background.name),description)
-                st.experimental_rerun()
-            #print(description)
-            #print(newRequirement)
+                st.experimental_rerun() #refresh after new pdf is generated
+            
+            #prompt the user if the model decide not to generate
             if not isGenerate:
-                st.text("Job Jedi: Generation failed")
+                st.text("Job Jedi: Can't generate a new one")

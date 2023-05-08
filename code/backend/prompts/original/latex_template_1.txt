@@ -5,4 +5,7 @@ The experience section of the latex template refers to the working experience. T
 Remember that in latex, we put the backslash '\' before the special characters, such as '#'. Use only utf-8 characters.
 (for revision purposes, this part is relevant to the heading, education, and experience; for other purposes, please ignore)
 
+Past user requests:
+None
+
 generated resume:

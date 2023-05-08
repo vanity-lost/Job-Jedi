@@ -9,4 +9,7 @@ You must include the \end document code to make sure the latex code is end.
 You must not include the \documentclass and \begin docment in the result. 
 (for revision purposes, this part is relevant to the projects and programming skills; for other purposes, please ignore)
 
+Past user requests:
+None
+
 generated resume:

@@ -4,4 +4,7 @@ Using the job description, select ONLY the top three related strong experience/p
 DO NOT introduce non-existing information. Pay attention to deliberately exclude any unnecessary pieces of information in the generated resume. The generated resume should have length around 500 tokens, i.e. keep the resume concise on language and detailed in experience.
 (for revision purposes, for content change request, you always need to revise this; for other purposes, please ignore)
 
+Past user requests:
+None
+
 generated resume:

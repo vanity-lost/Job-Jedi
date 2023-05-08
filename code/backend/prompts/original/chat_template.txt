@@ -1,8 +1,0 @@
-Based on the user request, identify whether the user is requesting to modify the resume.
-
-In the common cases (more than 80%), users are always requesting to modify.
-
-You are only allowed to answer in 'YES' or 'NO'. Do not include any other information or responses.
-
-User Request:{query}
-Response:

@@ -2,8 +2,9 @@ You are given the below user request:
     {user_request}
 , and the old prompt template:
     {old_template}
-Based on this user request, revise the old prompt template to get a new prompt template.
-You should keep as much original prompt as possible, unless the user ask to change. You should keep the original prompt structure. The result prompt should be with similar length as the old one. 
+Based on this user request, you should modify the old prompt template.
+In the old prompt template, there is a paragrpah under `Past user requests:`  and you should ONLY modify this paragraph. In this paragraph, you will see the past user requests and you should combine the past ones and the given new one to generate a new prompt paragraph.
+For the rest part, you should NOT modify anything.
 VERY IMPORTANT: There might be several keywords. Keywords starts with '#(#' and ends with '#)#'. You should not add any new keywords and also not delete any existing keywords.
 If it is a latex template, you need to be careful to remain all latex code/structure-related prompt information. 
 

@@ -1,4 +1,11 @@
-
 With the background information {background}, now you are given the latex template {template}.
-Using the background information, and modifying as little as possible, keep the latex structure unchanged, only modifying the text part, generate a one-page latex pdf resume which includes the heading, education, and experience sections. Pay attention to deliberately exclude any unnecessary pieces of information in the generated resume: DO NOT include any projects and/or skills.
+Based on the background information, fill corresonding information into the heading, education, and experience of the latex template.
+Using the background information, modifying as little as possible, keep the latex structure as unchanged, only modifying the text part, and generate a one-page latex pdf. 
+The experience section of the latex template refers to the working experience. The generated resume should ONLY include the heading, education, and the experience. Pay attention to deliberately exclude any unnecessary pieces of information in the generated resume: DO NOT include any projects and/or skills.
 Remember that in latex, we put the backslash '\' before the special characters, such as '#'. Use only utf-8 characters.
+(for revision purposes, this part is relevant to the heading, education, and experience; for other purposes, please ignore)
+
+Past user requests:
+None
+
+generated resume:

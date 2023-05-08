@@ -83,6 +83,10 @@ with st.container():
     st.write("##")
     if 'firstTime' not in st.session_state:
         st.session_state['firstTime'] = 'True'
+        if st.session_state['firstTime'] == 'True':
+            print("it works")
+
+'''
 with st.container():
     left_column, right_column = st.columns((3, 1))
     with left_column:
@@ -114,3 +118,4 @@ with st.container():
             # print(newRequirement)
             if not isGenerate:
                 st.text("Job Jedi: Generation failed")
+'''

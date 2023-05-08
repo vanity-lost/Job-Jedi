@@ -1,3 +1,0 @@
-
-
-With the three most relevant strong experience/projects as the background information \n {background} \n, now you are given the detailed job description \n {job} \n. Utilizing the combined information, generate a strong resume that clearly outlines your experience and knowledge. Pay attention to deliberately exclude any unnecessary pieces of information in the generated resume. The generated resume should have length around 500 tokens, i.e. keep the resume concise on language and detailed in experience.

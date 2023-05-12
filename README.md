@@ -1,4 +1,4 @@
-# <img src="./logo.png" width="50" height="50"> Job Jedi
+# <img src="/utils/logo.png" width="50" height="50"> Job Jedi
 
 This repository is a development track project of UIUC CS 510. This project aims to generate automatically resumes based on the job description to help people save time with job applications.
 
@@ -30,13 +30,22 @@ Job Jedi saves time and effort by eliminating the hassle of manual resume custom
 3. Follow the tutorial examples to chat with our agents to personalize/improve the resume: 
 <img src="./logo.png" width="200" height="200">
 
+## :book: Main Framework
+#### Resume Generation: 
+<img src="/utils/resume_generation.png">
+
+#### User Feedback: 
+<img src="/utils/feedback.png">
+
 ## :camera: Screenshots
 #### Example 1:
 Generate from our sample background 1: 
 <img src="./logo.png" width="200" height="200">
+
 #### Example 2:
 Generate from our sample background 2: 
 <img src="./logo.png" width="200" height="200">
+
 #### Example 3:
 Generate from our sample background 3: 
 <img src="./logo.png" width="200" height="200">

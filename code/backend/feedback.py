@@ -10,6 +10,7 @@ class FeedbackBot():
     def __init__(self, llm, generator):
         self.generator = generator
         self.verbose = False
+        # get a revision model with memory
         with open(config.REVISE_PROMPT_TEMPLATE_PATH) as f:
             REVISE_PROMPT_TEMPLAT = f.read()
         revise_template = PromptTemplate(
@@ -25,16 +26,23 @@ class FeedbackBot():
                                        verbose=self.verbose)
 
     def update(self, path):
+        """
+        revise the template with protected keywords
+        """
+        # protect keywords
         with open(path) as f:
             template = f.read().replace('{', '#(#').replace('}', '#)#')
-
+        # revise the template
         template = self.revision_chain.run(
             old_template=template, user_request=self.user_query)
-        
+        # protect keywords        
         with open(path, 'w') as f:
             f.write(template.replace('#(#', '{').replace('#)#', '}'))
 
     def run(self, user_query, verbose=False):
+        """
+        update all prompts
+        """
         self.verbose = verbose
         self.user_query = user_query
 

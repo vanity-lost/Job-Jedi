@@ -10,18 +10,22 @@ from langchain.document_loaders import Docx2txtLoader
 from langchain.agents import initialize_agent, AgentType, Tool
 
 from backend import config
-from backend.feedback import FeedbackBot
 from backend.resume_generation import ResumeGenerator
 
 class CustomAgent():
+    """
+    Agent to control the conversation with tools
+    """
     def __init__(self):
         os.environ['OPENAI_API_KEY'] = config.OPENAI_API_KEY
         self.llm = OpenAI(temperature=0, max_tokens=1200)
+        # set the two memory
         self.memory = ConversationBufferMemory(memory_key="chat_history")
         readonlymemory = ReadOnlySharedMemory(memory=self.memory)
-
+        
+        # build the resume generator
         self.resume_generator = ResumeGenerator(self.llm, readonlymemory)
-        # self.feedback_bot = FeedbackBot(self.llm, self.resume_generator, readonlymemory)
+        # allow the model to choose from two actions
         tools = [
             Tool(
                 name = "Update Prompts",
@@ -38,4 +42,7 @@ class CustomAgent():
         self.agent = initialize_agent(tools, self.llm, agent=AgentType.CONVERSATIONAL_REACT_DESCRIPTION, verbose=True, memory=self.memory)
     
     def run(self, query):
+        """
+        Run the agent to make responses
+        """
         return self.agent.run(query)

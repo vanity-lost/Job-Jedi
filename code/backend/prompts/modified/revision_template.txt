@@ -2,9 +2,8 @@ You are given the below user request:
     {user_request}
 , and the old prompt template:
     {old_template}
-Based on this user request, revise the old prompt template to get a new prompt template.
-You should keep as much original prompt as possible, unless the user ask to change. You should keep the original prompt structure. The result prompt should be with similar length as the old one. 
-VERY IMPORTANT: There might be several keywords. Keywords starts with '#(#' and ends with '#)#'. You should not add any new keywords and also not delete any existing keywords.
-If it is a latex template, you need to be careful to remain all latex code/structure-related prompt information. 
+Based on this user request, you should only modify the section of old prompt template which is surrounded by `###` and `###`.
+You should combine the past user requests and the new one, and then fill in the text that starts from `###` and ends with `###`.
+For example, if the user request is `more experience` and there is a text in the old prompt template `### None ###`, then the result should be `### more experience ###`.
 
 New Template here:

@@ -2,16 +2,10 @@ import requests
 import streamlit as st
 import base64
 import os
-from backend.resume_generation import ResumeGenerator
-from backend.feedback import FeedbackBot
 from backend import config
 from streamlit_chat import message
 from backend.mainbot import CustomAgent
 
-
-os.environ['OPENAI_API_KEY'] = config.OPENAI_API_KEY
-generator = ResumeGenerator()
-chatbot = FeedbackBot()
 #########################################################
 
 
@@ -54,6 +48,8 @@ if 'newInput' not in st.session_state:
     st.session_state['newInput'] = ''
 if 'agent' not in st.session_state:
     st.session_state.agent = CustomAgent()
+if 'isNewInput' not in st.session_state:
+    st.session_state.isNewInput = 'False'
 
 
 # ---- HEADER SECTION ----
@@ -86,8 +82,7 @@ with st.container():
     st.write("##")
     
 #---Display generated PDF on the left, Customization input and Generate button on the right---#
-with st.container():
-    left_column, right_column = st.columns((3, 1))
+def render_pdf(left_column):
     with left_column:
         if st.session_state['firstTime']=='True':
             pdf_data = read_initial_pdf_file("./placeholder.pdf")
@@ -96,8 +91,10 @@ with st.container():
         pdf_iframe = st.empty()
         pdf_iframe.markdown(
             f'<iframe id="pdf" src="data:application/pdf;base64,{pdf_data}" width="1150" height="1495"></iframe>', unsafe_allow_html=True)
-        
 
+with st.container():
+    left_column, right_column = st.columns((3, 1))
+    render_pdf(left_column)
     
     with right_column:
         
@@ -116,18 +113,24 @@ with st.container():
         def submit():
             st.session_state.newInput = st.session_state.input
             st.session_state.input = ''
+            st.session_state.isNewInput = 'True'
 
-        st.text_input("You: ",key="input", on_change=submit)
+        st.text_input("You: ", key="input", on_change=submit)
         
-        if len(st.session_state.newInput)>0:
+        if len(st.session_state.newInput)>0 and st.session_state.isNewInput == 'True':
             user_input = st.session_state.newInput
             config.job_description = description
             config.background_path = os.path.join("./",background.name)
 
-            agentOutput = st.session_state.agent.run(user_input)
+            with st.spinner('Job Jedi is working on it...'):
+                agentOutput = st.session_state.agent.run(user_input)
+            render_pdf(left_column)
             st.session_state.past.append(user_input)
             st.session_state.generated.append(agentOutput)
+            st.session_state.isNewInput = 'False'
             st.session_state['firstTime'] = 'False'
+            st.experimental_rerun()
+
 
         if st.session_state['generated']:
             if st.session_state['past']:

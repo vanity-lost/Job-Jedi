@@ -2,8 +2,6 @@ You are given the background \n {background} \n.
 Based on the given background, extract the required information.
 From the background, you should extract all the informaiton related to two sections: project (i.e. project experience, not the working experience!) and the programming skills (any skillsets that are related to programming or working requirements). 
 IMPORTANT: The result should not contain information not from required sections. For required information, you should keep as much and original as possible.
-
-Past user requests:
-None
+Past user requests: ### None ###
 
 the required information:

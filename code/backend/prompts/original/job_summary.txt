@@ -2,8 +2,6 @@ You are given the detailed job description \n {job} \n.
 Based on the job description, extract the required information, generate a concise summary.
 Using the job description, extract the job/position title, company name, company position, specific teams/departments, any requirements (including the basic and preferred requirements), the description of expected responsibilities and expected personalities. 
 IMPORTANT: You need to keep your words concise and not miss any important information. 
-
-Past user requests:
-None
+Past user requests: ### None ###
 
 summary:

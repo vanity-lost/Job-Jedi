@@ -1,9 +1,7 @@
 You are given the background \n {background} \n.
 Based on the given background, extract the required information.
 From the background, you should extract all the informaiton related to three sections: heading (personal info, including name, address, email, personal websites, etc.), education, and working experience. 
-IMPORTANT: The result should not contain information not from required sections. For required information, you should keep as much and original as possible.
-
-Past user requests:
-None
+IMPORTANT: You should contain original words as much as possible in the required sections.
+Past user requests: ### None ###
 
 the required information:

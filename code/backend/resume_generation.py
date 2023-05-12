@@ -10,8 +10,10 @@ from backend import config
 
 
 class ResumeGenerator():
-    def __init__(self):
+    def __init__(self, llm, readonlymemory):
         self.verbose = False
+        self.llm = llm
+        self.readonlymemory = readonlymemory
 
     def generate_job_summary(self):
         job_template = PromptTemplate(
@@ -22,7 +24,8 @@ class ResumeGenerator():
         )
         job_summary_chain = LLMChain(llm=self.llm,
                                      prompt=job_template,
-                                     verbose=self.verbose)
+                                     verbose=self.verbose,
+                                     memory=self.readonlymemory)
         self.job_summary = job_summary_chain.run(job=self.job_description)
         logging.info('The job summary is generated.')
 
@@ -42,7 +45,8 @@ class ResumeGenerator():
         )
         rephrase_chain = LLMChain(llm=self.llm,
                                   prompt=rephrase_template,
-                                  verbose=self.verbose)
+                                  verbose=self.verbose,
+                                  memory=self.readonlymemory)
 
         results = []
         for part in background_info_doc:
@@ -63,7 +67,8 @@ class ResumeGenerator():
 
         reformat_chain = LLMChain(llm=self.llm,
                                   prompt=reformat_template,
-                                  verbose=self.verbose)
+                                  verbose=self.verbose,
+                                  memory=self.readonlymemory)
         res = reformat_chain.run(background=background, template=latex)
         return bytes(res, 'utf-8').decode('utf-8', 'ignore').strip()
     
@@ -99,7 +104,8 @@ class ResumeGenerator():
         )
         background_section_chain = LLMChain(llm=self.llm,
                                             prompt=background_template,
-                                            verbose=self.verbose)
+                                            verbose=self.verbose,
+                                            memory=self.readonlymemory)
         background_section = background_section_chain.run(background=self.background_info_generated)
 
         return background_section
@@ -111,15 +117,14 @@ class ResumeGenerator():
         
         self.read_files()
 
-        self.llm = OpenAI(max_tokens=1200)
-
         self.generate_job_summary()
         self.generate_background_summary()
 
-        results = []
         background_section_1 = self.generate_background_section(self.BACKGROUND_SECTION_TEMPLATE_1)
         background_section_2 = self.generate_background_section(self.BACKGROUND_SECTION_TEMPLATE_2)
+        logging.info('The backgroun section is generated.')
 
+        results = []
         results.append(self.generate_latex(self.LATEX_PROMPT_TEMPLAT_1, self.part1, background_section_1))
         results.append(self.generate_latex(self.LATEX_PROMPT_TEMPLAT_2, self.part2, background_section_2))
 

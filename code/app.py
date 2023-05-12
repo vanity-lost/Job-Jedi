@@ -42,12 +42,16 @@ def read_pdf_file(file):
 
 local_css("style/style.css")
 
+#load place holder pdf if first time loggin
 if 'firstTime' not in st.session_state:
     st.session_state['firstTime'] = 'True'
+# variable to hold new user input, the original variable need to be modified to '', hence can't be used to hold value
 if 'newInput' not in st.session_state:
     st.session_state['newInput'] = ''
+# LangChain API agent
 if 'agent' not in st.session_state:
     st.session_state.agent = CustomAgent()
+# regenerate iff there is new input from user 
 if 'isNewInput' not in st.session_state:
     st.session_state.isNewInput = 'False'
 
@@ -103,13 +107,14 @@ with st.container():
 
         if 'past' not in st.session_state:
             st.session_state['past'] = []
-
+        # get text from input
         def get_text():
             input_text = st.text_input("You: ",key="input")
-            return input_text 
+            return input_text
+        # empty user input 
         def clearUserInput():
             st.session_state["input"] = ""
-
+        # read input and empty input after user click submit
         def submit():
             st.session_state.newInput = st.session_state.input
             st.session_state.input = ''
@@ -121,7 +126,7 @@ with st.container():
             user_input = st.session_state.newInput
             config.job_description = description
             config.background_path = os.path.join("./",background.name)
-
+            #calling langchain
             with st.spinner('Job Jedi is working on it...'):
                 agentOutput = st.session_state.agent.run(user_input)
             render_pdf(left_column)

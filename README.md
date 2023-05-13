@@ -17,18 +17,20 @@ Job Jedi saves time and effort by eliminating the hassle of manual resume custom
 
 ## ⚡ Quick Start
 
-- Python Dependeceny: [requirements.txt](https://404.com)
+- Python Dependeceny: [requirements.txt](/requirement.txt)
 
   - `pip install -r requirements.txt`
+
+- install [LaTeX](https://www.latex-project.org/get/) 
 
 - Run the scripts by `streamlit run app.py` (You need to be careful about the directory structure)
 
 ## :book: Quick Tutorial
 1. Run the scripts by `streamlit run app.py`
 2. Follow this tutorial steps to generate your first resume (it might take a few minutes): 
-<img src="./logo.png" width="200" height="200">
+<img src="/utils/tutorial.png" width="200" height="200">
 3. Follow the tutorial examples to chat with our agents to personalize/improve the resume: 
-<img src="./logo.png" width="200" height="200">
+<img src="/utils/chat.png" width="200" height="200">
 
 ## :book: Main Framework
 #### Resume Generation: 
@@ -40,15 +42,15 @@ Job Jedi saves time and effort by eliminating the hassle of manual resume custom
 ## :camera: Screenshots
 #### Example 1:
 Generate from our sample background 1: 
-<img src="./logo.png" width="200" height="200">
+<img src="/utils/b1j1.jpg" width="200" height="200">
 
 #### Example 2:
 Generate from our sample background 2: 
-<img src="./logo.png" width="200" height="200">
+<img src="/utils/b2j1.jpg" width="200" height="200">
 
 #### Example 3:
 Generate from our sample background 3: 
-<img src="./logo.png" width="200" height="200">
+<img src="/utils/b3j1.jpg" width="200" height="200">
 
 ## :handshake: Contribute
 

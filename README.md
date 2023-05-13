@@ -26,6 +26,7 @@ Job Jedi saves time and effort by eliminating the hassle of manual resume custom
 - Run the scripts by `streamlit run app.py` (You need to be careful about the directory structure)
 
 ## :book: Quick Tutorial
+
 1. Run the scripts by `streamlit run app.py`
 2. Follow this tutorial steps to generate your first resume (it might take a few minutes): 
 <img src="/utils/tutorial.png" width="700">
@@ -33,6 +34,7 @@ Job Jedi saves time and effort by eliminating the hassle of manual resume custom
 <img src="/utils/chat.png" height="500">
 
 ## :book: Main Framework
+
 #### Resume Generation: 
 <img src="/utils/resume_generation.png" width="700">
 
@@ -40,17 +42,12 @@ Job Jedi saves time and effort by eliminating the hassle of manual resume custom
 <img src="/utils/feedback.png" width="700">
 
 ## :camera: Screenshots
-#### Example 1:
-Generate from our sample background 1: 
+
+#### Generate from our sample background 1:
 <img src="/utils/b1j1.jpg" height="700">
 
-#### Example 2:
-Generate from our sample background 2: 
+#### Generate from our sample background 2:
 <img src="/utils/b2j1.jpg" height="700">
-
-#### Example 3:
-Generate from our sample background 3: 
-<img src="/utils/b3j1.jpg" height="700">
 
 ## :handshake: Contribute
 

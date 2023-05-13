@@ -18,4 +18,4 @@ REVISE_PROMPT_TEMPLATE_PATH = './backend/prompts/modified/revision_template.txt'
 BACKGROUND_SECTION_TEMPLATE_1_PATH = './backend/prompts/modified/background_section_1.txt'
 BACKGROUND_SECTION_TEMPLATE_2_PATH = './backend/prompts/modified/background_section_2.txt'
 
-OPENAI_API_KEY = ''
+OPENAI_API_KEY = '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'

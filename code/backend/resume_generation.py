@@ -5,6 +5,7 @@ from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.document_loaders import Docx2txtLoader
+from func_timeout import func_timeout, FunctionTimedOut
 
 from backend import config
 
@@ -169,7 +170,14 @@ class ResumeGenerator():
             f.write(generated_resume)
 
         # compile the latex code
-        os.system(f"pdflatex {output_path}")
+        command = f"pdflatex {output_path}"
+        def wrapper():
+            os.system(command)
+        try:
+            func_timeout(5, wrapper)
+        except FunctionTimedOut:
+            print("\n\nLATEX compile failed\n\n")
+            self.run('')
         
         # remove the extra files
         filenames = ['resume.aux', 'resume.log', 'resume.out']
